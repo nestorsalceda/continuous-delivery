@@ -15,7 +15,7 @@ nginx_sites:
 
 munin_hosts:
   - name: munin.localdomain
-    address: 10.0.1.10
+    address: 10.0.0.20
 
   - name: app.localdomain
-    address: 10.0.1.20
+    address: 10.0.0.69

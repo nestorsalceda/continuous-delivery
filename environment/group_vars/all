@@ -16,10 +16,11 @@ users:
 firewall_default_rules:
   - port: 4949
     rule: allow
-    from: 10.0.1.10
+  - port: 8888
+    rule: allow
 
 munin_node_allowed_ips:
-  - 10.0.0.10
+  - 10.0.0.20
 
 logwatch_mailto: nestor@nestorsalceda.com
 logwatch_mailfrom: nestor@nestorsalceda.com

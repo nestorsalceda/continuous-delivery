@@ -1,0 +1,6 @@
+---
+logwatch_mailto: root
+logwatch_mailfrom: Logwatch
+logwatch_range: yesterday
+logwatch_detail: Low
+logwatch_mailer: "/usr/sbin/sendmail -t"

@@ -1,0 +1,10 @@
+---
+- name: set root password
+  user:
+    name=root
+    password="{{ root_password }}"
+
+- name: install vim
+  apt:
+    pkg=vim
+    state=present

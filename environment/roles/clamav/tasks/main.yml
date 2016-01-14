@@ -1,0 +1,15 @@
+---
+- name: install package
+  apt:
+    pkg=clamav-daemon
+    state=present
+
+- name: start update service
+  service:
+    name=clamav-freshclam
+    state=started
+
+- name: start service
+  service:
+    name=clamav-daemon
+    state=started

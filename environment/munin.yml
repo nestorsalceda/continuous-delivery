@@ -1,0 +1,6 @@
+---
+- hosts: munin
+  roles:
+    - base
+    - munin
+    - nginx

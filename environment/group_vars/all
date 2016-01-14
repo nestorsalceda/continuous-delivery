@@ -1,0 +1,26 @@
+---
+root_password: "$6$rounds=656000$15FFW6JqucsNzi6s$NCSoZUrifkB8xO.Vu5dctpM8HylE25PS3Zz8OmoN3w3ergkvcirJk1rYRGvQMew6DsjzHWNqbwItpRiWaipeb1"
+
+unattended_origins_patterns:
+  - "origin=${distro_id},codename=${distro_codename},label=${distro_id}-Security"
+
+users:
+  - username: nestor
+    name: Néstor Salceda
+    uid: 10001
+    groups: ["sudo"]
+    password: "$6$rounds=656000$fA9LZF/8kRAAdK/i$ygsVVupOmqI7R9jKmv0KtMXiBxjBkbIfRwt/Pc8tEiG787/1H7nPjDcXN.2p3KwIEv2lZ66tMctFwbcaZ37oo1"
+    ssh_key:
+    - "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0Xdx1tnCMf7CwLS2rOrcUakmQfSrO5ITpIdz925HeQpSsybY6swDHOy9fjpuPLiHkKBSOjSPAYlvS61nllhFyPdzeFGctgcCQ0wxWaTpbdtt1iguT+5lx6pxA+M1q9Tx8uLlSyETVcywh2k/iRjq9hlXusapl4SfgfRXB4srNLKfkps7H3BHV0wqZLr1gDTmgxkp0uJ0QmfjlA6Bvo0JqV8zq640mofzQ8xTWQUw4wlWH+FuknWPFYfoKxPTdFc6grqyIEDkEHPy6hwFYeHCNgEA7c0qC7Ghw400ER5sHVcW8dakRS3cAGjrbSoqRtQIci7vjHxVxT4eBe3qtDJ5UQ== nestor@point"
+
+firewall_default_rules:
+  - port: 4949
+    rule: allow
+    from: 10.0.1.10
+
+munin_node_allowed_ips:
+  - 10.0.0.10
+
+logwatch_mailto: nestor@nestorsalceda.com
+logwatch_mailfrom: nestor@nestorsalceda.com
+logwatch_detail: Med

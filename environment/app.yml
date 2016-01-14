@@ -2,3 +2,54 @@
 - hosts: app
   roles:
     - base
+
+  tasks:
+
+    - name: add debian transport https
+      apt:
+        pkg=apt-transport-https
+        state=present
+
+    - name: add docker key
+      apt_key:
+         keyserver=hkp://p80.pool.sks-keyservers.net:80
+         id=58118E89F3A912897C070ADBF76221572C52609D
+
+    - name: add docker repository
+      apt_repository:
+        repo="deb https://apt.dockerproject.org/repo debian-jessie main"
+
+    - name: install docker
+      apt:
+        pkg: docker-engine
+        state: present
+
+    - name: start docker
+      service:
+        name=docker
+        state=started
+
+    - name: install setuptools
+      apt:
+        pkg=python-setuptools
+        state=present
+
+    - name: install pip
+      easy_install:
+        name=pip
+        state=present
+
+    - name: install docker-py
+      pip:
+        name=docker-py
+        state=present
+
+    - name: application container
+      docker:
+        name: superbapp
+        image: nestorsalceda/superbapp
+        state: reloaded
+        pull: always
+        net: host
+        #ports:
+        #  - "0.0.0.0:8888:8888"
